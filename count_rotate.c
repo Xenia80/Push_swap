@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   count_rotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: pnona <pnona@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 16:05:57 by pnona             #+#    #+#             */
-/*   Updated: 2022/03/25 19:34:30 by user             ###   ########.fr       */
+/*   Updated: 2022/03/26 15:54:01 by pnona            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	min_max_step(t_list *stack_a, int number, int *a)
 
 	*a = 0;
 	len_a = ft_lstsize(stack_a);
-	if (number < find_min(stack_a));
+	if (number < find_min(stack_a))
 		prev_min_max = find_min(stack_a));
 	else
 	{

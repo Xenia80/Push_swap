@@ -6,7 +6,7 @@
 /*   By: pnona <pnona@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:51:59 by pnona             #+#    #+#             */
-/*   Updated: 2022/03/20 16:10:04 by pnona            ###   ########.fr       */
+/*   Updated: 2022/03/26 17:48:09 by pnona            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	sort_3(t_list **stack)
 	{
 		instr_ra(stack);
 		max = find_max(*stack);
-		second = ft_atoi((*stack)->next->content); 
+		second = ft_atoi((*stack)->next->content);
 	}
 	if (second == max)
 	{
@@ -71,7 +71,7 @@ void	sort_3(t_list **stack)
 		instr_sa(stack);
 }
 
-static int	sorted(t_list *stack)
+int	sorted(t_list *stack)
 {
 	while (stack->next)
 	{

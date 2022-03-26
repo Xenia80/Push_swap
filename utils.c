@@ -6,7 +6,7 @@
 /*   By: pnona <pnona@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 14:37:35 by pnona             #+#    #+#             */
-/*   Updated: 2022/03/20 15:37:45 by pnona            ###   ########.fr       */
+/*   Updated: 2022/03/26 17:51:02 by pnona            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	ft_abs(int nbr)
 	return (nbr);
 }
 
-void	rotate_1(t_list **stack, int n, void (*f)(t_list **))
+void	rot_1(t_list **stack, int n, void (*f)(t_list **))
 {
 	while (n)
 	{
@@ -55,11 +55,11 @@ void	rotate_1(t_list **stack, int n, void (*f)(t_list **))
 	}
 }
 
-void	rotate_2(t_list **stack_a, t_list **stack_b, int n, void (*f)(t_list **, t_list **))
+void	rot_2(t_list **a, t_list **b, int n, void (*f)(t_list **, t_list **))
 {
 	while (n)
 	{
-		(*f)(stack_a, stack_b);
+		(*f)(a, b);
 		--n;
 	}
 }
