@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   count_rotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnona <pnona@student.42.fr>                +#+  +:+       +#+        */
+/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 16:05:57 by pnona             #+#    #+#             */
-/*   Updated: 2022/03/26 15:54:01 by pnona            ###   ########.fr       */
+/*   Updated: 2022/03/28 21:08:38 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	min_max_step(t_list *stack_a, int number, int *a)
 	*a = 0;
 	len_a = ft_lstsize(stack_a);
 	if (number < find_min(stack_a))
-		prev_min_max = find_min(stack_a));
+		prev_min_max = find_min(stack_a);
 	else
 	{
 		prev_min_max = find_max(stack_a);
@@ -49,7 +49,7 @@ static void	mid_step(t_list *stack_a, int number, int *a)
 	{
 		current_num = ft_atoi(stack_a->content);
 		next_num = ft_atoi(stack_a->next->content);
-		if (nember > current_num && number < next_num)
+		if (number > current_num && number < next_num)
 			break ;
 		++(*a);
 		stack_a = stack_a->next;
@@ -83,12 +83,12 @@ void	count_rotate(t_list *stack_a, t_list *stack_b, int *rot_a, int *rot_b)
 			mid_step(stack_a, number, &a);
 		b = index;
 		define_sign_of_step_b(index, len_b, &b);
-		if (!b || ft_abs(*rot_a) + ft_abs(rot_b) > ft_abs(a) + ft_abs(b))
+		if (!b || ft_abs(*rot_a) + ft_abs(*rot_b) > ft_abs(a) + ft_abs(b))
 		{
 			*rot_a = a;
 			*rot_b = b;
 		}
-		stack = stack_b->next;
+		stack_b = stack_b->next;
 		++index;
 	}
 }

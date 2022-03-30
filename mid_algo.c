@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mid_algo.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnona <pnona@student.42.fr>                +#+  +:+       +#+        */
+/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 16:05:42 by pnona             #+#    #+#             */
-/*   Updated: 2022/03/26 17:20:49 by pnona            ###   ########.fr       */
+/*   Updated: 2022/03/28 21:09:19 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	sort_array(int *array, int len)
 	int	temp;
 
 	x = 0;
-	while (i < len - 1)
+	while (x < len - 1)
 	{
 		min = x;
 		y = x + 1;
@@ -51,7 +51,7 @@ static int	find_mid(t_list *stack)
 	i = 0;
 	while (stack)
 	{
-		aray[i++] = ft_atoi(stack->content);
+		array[i++] = ft_atoi(stack->content);
 		stack = stack->next;
 	}
 	sort_array(array, len_s);
@@ -70,17 +70,17 @@ static void	push_half_b(t_list **stack_a, t_list **stack_b, int half, int mid)
 		num = ft_atoi((*stack_a)->content);
 		if (num < mid)
 		{
-			pb(stack_a, stack_b);
+			instr_pb(stack_a, stack_b);
 			half--;
 		}
 		else
 		{
 			end = ft_lstlast(*stack_a);
-			num = ft_atoi(last->content);
+			num = ft_atoi(end->content);
 			if (num < mid)
-				rra(stack_a);
+				instr_rra(stack_a);
 			else
-				ra(stack_a);
+				instr_ra(stack_a);
 		}
 	}
 }
@@ -94,11 +94,11 @@ void	mid_algo(t_list **stack_a, t_list **stack_b)
 	len_a = ft_lstsize(*stack_a);
 	while (len_a > 2)
 	{
-		mid = mid_step(*stack_a);
+		mid = find_mid(*stack_a);
 		half = len_a / 2;
 		push_half_b(stack_a, stack_b, half, mid);
 		len_a = ft_lstsize(*stack_a);
 	}
 	if (!sorted(*stack_a))
-		sa(stack_a);
+		instr_sa(stack_a);
 }

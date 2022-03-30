@@ -1,9 +1,9 @@
-HDR			= push_swap.h checker_bonus.h
+HDR			= push_swap.h bonus_check.h
 NAME		= push_swap
 SRC			= push_swap.c count_rotate.c instr_push.c instr_reverse_rotate.c instr_rotate.c instr_swap.c make_stack_a.c mid_algo.c sort_morethen3.c utils.c utils2.c
 OBJ			= $(SRC:.c=.o)
 NAME_B		= checker
-SRC_B		= checker_bonus.c input_parser.c ops_swap_bonus.c ops_rot_bonus.c ops_rr_bonus.c ops_push_bonus.c utils.c
+SRC_B		= check_bonus.c make_stack_a.c instr_swap_bonus.c instr_rotate_bonus.c instr_reverse_rotate_bonus.c instr_push_bonus.c utils.c utils2.c
 OBJ_B		= $(SRC_B:.c=.o)
 LIB_SRC		= ./libft/
 LIB_NAME	= libft.a
@@ -13,7 +13,7 @@ CFLAGS		= -Wall -Wextra -Werror
 
 all: $(NAME)
 
-%.o: %.c $(HDR)
+%.o: %.c $(HDR) Makefile
 	$(CC) $(CFLAGS) -I. -I$(LIB_SRC) -c $< -o $@
 
 $(NAME): $(OBJ) $(LIB_SRC)$(LIB_NAME)

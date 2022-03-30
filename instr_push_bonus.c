@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   instr_push_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnona <pnona@student.42.fr>                +#+  +:+       +#+        */
+/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 17:36:26 by pnona             #+#    #+#             */
-/*   Updated: 2022/03/26 18:23:20 by pnona            ###   ########.fr       */
+/*   Updated: 2022/03/30 20:45:21 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "check_bonus.h"
 
 static void	push_on_top(t_list **src, t_list **dst)
 {
@@ -19,7 +19,7 @@ static void	push_on_top(t_list **src, t_list **dst)
 	tmp = *src;
 	*src = (*src)->next;
 	tmp->next = NULL;
-	ft_lstadd_front(dat, ft_lstnew(ft_strdup(tmp->content)));
+	ft_lstadd_front(dst, ft_lstnew(ft_strdup(tmp->content)));
 	ft_lstdelone(tmp, free);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnona <pnona@student.42.fr>                +#+  +:+       +#+        */
+/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:53:05 by pnona             #+#    #+#             */
-/*   Updated: 2022/03/26 18:02:08 by pnona            ###   ########.fr       */
+/*   Updated: 2022/03/28 21:08:26 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	min_max_step(t_list *stack_a, int number, int *a);
 void	count_rotate(t_list *stack_a, t_list *stack_b, int *rot_a, int *rot_b);
 void	instr_pb(t_list **stack_a, t_list **stack_b);
 void	instr_pa(t_list **stack_a, t_list **stack_b);
-void	instr_rra(t_list *stack_a);
-void	instr_rrb(t_list *stack_b);
-void	instr_rrr(t_list *stack_a, t_list *stack_b);
+void	instr_rra(t_list **stack_a);
+void	instr_rrb(t_list **stack_b);
+void	instr_rrr(t_list **stack_a, t_list **stack_b);
 void	instr_ra(t_list **stack_a);
 void	instr_rb(t_list **stack_b);
 void	instr_rr(t_list **stack_a, t_list **stack_b);
@@ -44,5 +44,6 @@ void	rot_1(t_list **stack, int n, void (*f)(t_list **));
 void	rot_2(t_list **a, t_list **b, int n, void (*f)(t_list **, t_list **));
 void	ft_error(char *err_msg);
 void	ft_split_free(char **split);
+long	ft_atol(const char *str);
 
 #endif

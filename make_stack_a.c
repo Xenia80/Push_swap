@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 16:37:03 by pnona             #+#    #+#             */
-/*   Updated: 2022/03/09 19:13:56 by user             ###   ########.fr       */
+/*   Updated: 2022/03/28 21:00:00 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	check_args(size_t argc, char **argv)
 		if (!len)
 			ft_error(ERR_MSG);
 		j = 0;
-		while (argc[i][j])
+		while (argv[i][j])
 		{
 			if (!(ft_isdigit(argv[i][j])) || argv[i][j] == ' '
 				|| ((argv[i][j] == '-' && ft_isdigit(argv[i][j + 1]))))
@@ -45,7 +45,7 @@ static void	check_min_max_int(t_list *stack)
 	while (stack)
 	{
 		num = ft_atol(stack->content);
-		if (num < "-2147483648" || num > "2147483647")
+		if (num < -2147483648 || num > 2147483647)
 			ft_error(ERR_MSG);
 		stack = stack->next;
 	}
@@ -117,8 +117,8 @@ void	make_stack_a(t_list **stack_a, size_t argc, char **argv)
 			ft_split_free(arg);
 		}
 		else
-			ft_lstadd_back(stack_a, ft_lstnew(ft_strdup(arg[i]));
-			++i;
+			ft_lstadd_back(stack_a, ft_lstnew(ft_strdup(argv[i])));
+		++i;
 	}
 	check_min_max_int(*stack_a);
 	check_dublicat(*stack_a);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnona <pnona@student.42.fr>                +#+  +:+       +#+        */
+/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:51:59 by pnona             #+#    #+#             */
-/*   Updated: 2022/03/26 17:48:09 by pnona            ###   ########.fr       */
+/*   Updated: 2022/03/28 21:40:20 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	sort_3(t_list **stack)
 	max = find_max(*stack);
 	first = ft_atoi((*stack)->content);
 	second = ft_atoi((*stack)->next->content);
-	if (fist == max)
+	if (first == max)
 	{
 		instr_ra(stack);
 		max = find_max(*stack);
@@ -69,17 +69,6 @@ void	sort_3(t_list **stack)
 	}
 	if (second == min)
 		instr_sa(stack);
-}
-
-int	sorted(t_list *stack)
-{
-	while (stack->next)
-	{
-		if (ft_atoi(stack->content) > ft_atoi(stack->next->content))
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
 }
 
 int	main(int argc, char **argv)
@@ -99,7 +88,7 @@ int	main(int argc, char **argv)
 		else if (size == 3)
 			sort_3(&stack_a);
 		else
-			sort_morethen3(&stack_a, stack_b);
+			sort_morethen3(&stack_a, &stack_b);
 	}
 	ft_lstclear(&stack_a, free);
 	return (0);

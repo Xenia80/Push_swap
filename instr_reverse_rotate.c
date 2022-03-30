@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instr_reverse_rotate.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnona <pnona@student.42.fr>                +#+  +:+       +#+        */
+/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 14:59:16 by pnona             #+#    #+#             */
-/*   Updated: 2022/03/26 17:36:52 by pnona            ###   ########.fr       */
+/*   Updated: 2022/03/28 20:34:40 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	ft_reverse_rotate(t_list **top)
 	do_last->next = NULL;
 }
 
-void	instr_rra(t_list *stack_a)
+void	instr_rra(t_list **stack_a)
 {
 	if (*stack_a && (*stack_a)->next)
 	{
@@ -37,7 +37,7 @@ void	instr_rra(t_list *stack_a)
 	}
 }
 
-void	instr_rrb(t_list *stack_b)
+void	instr_rrb(t_list **stack_b)
 {
 	if (*stack_b && (*stack_b)->next)
 	{
@@ -46,7 +46,7 @@ void	instr_rrb(t_list *stack_b)
 	}
 }
 
-void	instr_rrr(t_list *stack_a, t_list *stack_b)
+void	instr_rrr(t_list **stack_a, t_list **stack_b)
 {
 	if (*stack_a && stack_b && (*stack_a)->next && (*stack_b)->next)
 	{
