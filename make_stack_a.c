@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_stack_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: pnona <pnona@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 16:37:03 by pnona             #+#    #+#             */
-/*   Updated: 2022/03/28 21:00:00 by user             ###   ########.fr       */
+/*   Updated: 2022/04/02 17:03:32 by pnona            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ static void	check_args(size_t argc, char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (!(ft_isdigit(argv[i][j])) || argv[i][j] == ' '
-				|| ((argv[i][j] == '-' && ft_isdigit(argv[i][j + 1]))))
+			if (!(ft_isdigit(argv[i][j]) || argv[i][j] == ' '
+				|| (argv[i][j] == '-' && ft_isdigit(argv[i][j + 1]))))
 				ft_error(ERR_MSG);
-			j++;
+			++j;
 		}
-		i++;
+		++i;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: pnona <pnona@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 17:37:22 by pnona             #+#    #+#             */
-/*   Updated: 2022/03/26 17:37:48 by pnona            ###   ########.fr       */
+/*   Updated: 2022/04/02 19:04:18 by pnona            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ void	instr_rr(t_list **stack_a, t_list **stack_b)
 	{
 		ft_rotate(stack_a);
 		ft_rotate(stack_b);
-		ft_putendl_fd("ra", 1);
+		ft_putendl_fd("rr", 1);
 	}
 }

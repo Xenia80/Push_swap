@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mid_algo.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: pnona <pnona@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 16:05:42 by pnona             #+#    #+#             */
-/*   Updated: 2022/03/28 21:09:19 by user             ###   ########.fr       */
+/*   Updated: 2022/04/02 18:55:29 by pnona            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static void	push_half_b(t_list **stack_a, t_list **stack_b, int half, int mid)
 		if (num < mid)
 		{
 			instr_pb(stack_a, stack_b);
-			half--;
+			--half;
 		}
 		else
 		{

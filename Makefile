@@ -1,4 +1,4 @@
-HDR			= push_swap.h bonus_check.h
+HDR			= push_swap.h check_bonus.h
 NAME		= push_swap
 SRC			= push_swap.c count_rotate.c instr_push.c instr_reverse_rotate.c instr_rotate.c instr_swap.c make_stack_a.c mid_algo.c sort_morethen3.c utils.c utils2.c
 OBJ			= $(SRC:.c=.o)
